@@ -26,6 +26,23 @@ Before looking at optimized solutions, your first task is to design a baseline o
 
 *Hint:* see the pseudocode for Kadane's Algorithm in Part 2 for guidance on how to structure your approach.
 
+'''
+Pseudocode baseline solution
+Algorithm: BaselineSubarray(A)
+Input: A which is a list of n integers
+Output: The maximum contiguous subarray sum
+
+1. max_so_far = negative infinity
+2. for i from 0 to n-1:
+3.    sum = 0
+4.    for j from i to n-1:
+5.       sum = A[j] + sum
+6.       if sum > max_so_far: 
+7.            max_so_far = sum
+8. return max_so_far
+
+'''
+
 ## Part 2: The Optimized Algorithm (Kadane's Algorithm)
 
 Computer scientist Jay Kadane developed an elegant, dynamic programming approach to this problem that runs in $O(N)$ time.
