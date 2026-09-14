@@ -26,7 +26,7 @@ Before looking at optimized solutions, your first task is to design a baseline o
 
 *Hint:* see the pseudocode for Kadane's Algorithm in Part 2 for guidance on how to structure your approach.
 
-'''
+```
 Pseudocode baseline solution
 Algorithm: BaselineSubarray(A)
 Input: A which is a list of n integers
@@ -41,7 +41,7 @@ Output: The maximum contiguous subarray sum
 7.            max_so_far = sum
 8. return max_so_far
 
-'''
+```
 
 ## Part 2: The Optimized Algorithm (Kadane's Algorithm)
 
