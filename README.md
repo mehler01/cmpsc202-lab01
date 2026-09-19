@@ -108,15 +108,20 @@ Answer the following questions in a file called `reflection.md`:
 
 1. At what array size did your baseline algorithm become noticeably sluggish to execute?
 
+```
 While the baseline algorithm performed much slower in comparison to the kadane algorithm, I think that it became noticeably sluggish around the 2,500-5,000 element arrays. The baseline function's runtime eclipsed a tenth of a second for both of these arrays, while the kadane algorithm completed the same task in less than a thousanth of a second (.000108s and .000220s). At 10,000 integers, the baseline algorithm jumped up to over 1.8 seconds, which was noticeably more sluggish than its kadane counterpart, whose runtime still didn't eclipse a thousanth of a second (.000437s). 
+```
 
 2. Based on your empirical data and the shape of your graph, estimate how long (in seconds, minutes, or hours) your baseline algorithm would take to process an array of $1,000,000$ elements. Show your reasoning.
 
+```
 From the graph and empirical data, the baseline algorithm approximately quadruples in runtime between the 2,500, 5,000, and 10,000 length arrays (.116s -> .460s -> 1.83s). Note that all of these jumps double the amount of elements, so we can estimate that the runtime increases by 4x for every 2x increase to the number of elements. This estimation is somewhat supported by the fact that our graph approaches a linear relationship as k increases. Thus for one million elements, which is 100 times 10,000, the list size would increase by ~2^6-2^7 (64-128). We'll say it increases by 2^6.5 for estimation sake. Therefore, the runtime should increase by a factor of 4*6.5=26. Thus, I project the run speed would be around 1.83s x 26 ~ 47.5s for a 1,000,000 element array.
+```
 
 3. Based on your empirical data and the shape of your graph, estimate how long (in seconds, minutes, or hours) your Kadane's algorithm would take to process an array of $1,000,000$ elements. Show your reasoning.
 
+```
 From the graph and empirical data, the kadane algorithm approximatley doubles in runtime between the 2,500, 5,000, and 10,000 length arrays (.000108s -> .000220s -> .000437s). Note that all of these jumps double the amount of elements. Thus, the runtime increases by 2x for every 2x increase to the number of elements. The graph for kadane also approaches a linear relationship as k increases. Thus to get to 1,000,000 elements, we must increase the 10,000 element array by 100~2^6.5. So the run time will aproximately increase by a factor of 2x6.5=13. Thus, I project the run speed would be around .000437s x 13 ~ .00568s for a 1,000,000 element array.
-
+```
 
 Once you're finished, commit your changes and push them to your GitHub repository. Submit a link to your repo [here](https://forms.gle/5mFKZ9RtFJYVcPfJ6).
